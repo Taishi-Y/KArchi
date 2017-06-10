@@ -8,7 +8,7 @@ This repository is inspired by [Archi](https://github.com/ivacf/archi) by [ivacf
 * Kotlin
   * __Standard Android__: traditional approach with layouts, Activities/Fragments and Model.
   * __MVP__: Model View Presenter.
-  * __MVVM__: Model View ViewModel with data binding. 
+  * __MVVM__: Model View ViewModel with data binding.
 
 ## The App
 
@@ -24,6 +24,8 @@ The sample app displays a list of GitHub public repositories for a given usernam
 * Picasso
 * Mockito
 * Robolectric
+---
+* [Kotlin Android Extensions](https://kotlinlang.org/docs/tutorials/android-plugin.html)
 
 ## Standard Android
 The `/app` directoy contains the implementation that follows the traditional standard Android approach. This is a couple of layout files, two Activities and the model. The model is exactly the same for the three implementations and it contains: `Repository`, `User` and a retrofit service (`GithubService`).

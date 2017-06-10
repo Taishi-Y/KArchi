@@ -6,8 +6,8 @@ android {
 
     defaultConfig {
         applicationId "com.taishi.karchimvp"
-        minSdkVersion 16
-        targetSdkVersion 25
+        minSdkVersion rootProject.ext.androidMinSdkVersion
+        targetSdkVersion rootProject.ext.androidTargetSdkVersion
         versionCode 1
         versionName "1.0"
 
