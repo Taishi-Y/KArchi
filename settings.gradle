@@ -1,1 +1,1 @@
-include ':app', ':app-mvp', ':app-mvvm', ':kapp', ':kapp-mvp'
+include ':app', ':app-mvp', ':app-mvvm', ':kapp', ':kapp-mvp', ':kapp-mvvm'
