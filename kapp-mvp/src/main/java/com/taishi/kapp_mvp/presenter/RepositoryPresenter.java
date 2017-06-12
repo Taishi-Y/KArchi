@@ -31,7 +31,7 @@ public class RepositoryPresenter implements Presenter<RepositoryMvpView> {
     }
 
     public void loadOwner(String userUrl) {
-        ArchiApplication application = ArchiApplication.get(repositoryMvpView.getContext());
+        ArchiApplication application = ArchiApplication.Companion.get(repositoryMvpView.getContext());
         GithubService githubService = application.getGithubService();
         subscription = githubService.userFromUrl(userUrl)
                 .observeOn(AndroidSchedulers.mainThread())

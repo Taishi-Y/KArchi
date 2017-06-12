@@ -21,25 +21,25 @@ public class MockModelFabric {
     public static Repository newRepository(String name) {
         Random random = new Random();
         Repository repository = new Repository();
-        repository.name = name;
-        repository.id = random.nextInt(10000);
-        repository.description = "Description for " + name;
-        repository.watchers = random.nextInt(100);
-        repository.forks = random.nextInt(100);
-        repository.stars = random.nextInt(100);
-        repository.owner = newUser("User-" + name);
+        repository.setName(name);
+        repository.setId(random.nextInt(10000));
+        repository.setDescription("Description for " + name);
+        repository.setWatchers(random.nextInt(100));
+        repository.setForks(random.nextInt(100));
+        repository.setStars(random.nextInt(100));
+        repository.setOwner(newUser("User-" + name));
         return repository;
     }
 
     public static User newUser(String name) {
         Random random = new Random();
         User user = new User();
-        user.id = random.nextInt(10000);
-        user.name = name;
-        user.email = name + "@email.com";
-        user.location = "Location of " + name;
-        user.url = "http://user.com/" + name;
-        user.avatarUrl = "http://user.com/image/" + name;
+        user.setId(random.nextInt(10000));
+        user.setName(name);
+        user.setEmail(name + "@email.com");
+        user.setLocation("Location of " + name);
+        user.setUrl("http://user.com/" + name);
+        user.setAvatarUrl("http://user.com/image/" + name);
         return user;
     }
 }
