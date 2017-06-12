@@ -19,6 +19,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity(), MainMvpView {
+    override val context: Context
+        get() = this //To change initializer of created properties use File | Settings | File Templates.
 
     private var presenter: MainPresenter? = null
 
@@ -52,10 +54,6 @@ class MainActivity : AppCompatActivity(), MainMvpView {
         super.onDestroy()
     }
 
-    override fun getContext(): Context {
-        return this
-    }
-
     override fun showRepositories(repositories: List<Repository>) {
         val adapter = repos_recycler_view.adapter as RepositoryAdapter
         adapter.setRepositories(repositories)
@@ -82,7 +80,11 @@ class MainActivity : AppCompatActivity(), MainMvpView {
 
     private fun setupRecyclerView(recyclerView: RecyclerView) {
         val adapter = RepositoryAdapter()
-        adapter.setCallback { repository -> startActivity(RepositoryActivity.newIntent(this@MainActivity, repository)) }
+        adapter.setCallback(object : RepositoryAdapter.Callback{
+            override fun onItemClick(repository: Repository) {
+                startActivity(RepositoryActivity.newIntent(this@MainActivity, repository))
+            }
+        })
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
     }

@@ -24,7 +24,7 @@ The sample app displays a list of GitHub public repositories for a given usernam
 * Picasso
 * Mockito
 * Robolectric
----
+
 * [Kotlin Android Extensions](https://kotlinlang.org/docs/tutorials/android-plugin.html)
 
 ## Standard Android
