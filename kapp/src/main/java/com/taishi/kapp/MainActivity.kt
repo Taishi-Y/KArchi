@@ -97,7 +97,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupRecyclerView(recyclerView: RecyclerView) {
         val adapter = RepositoryAdapter()
-        adapter.setCallback { repository -> startActivity(RepositoryActivity.newIntent(this@MainActivity, repository)) }
+        adapter.setCallback(object : RepositoryAdapter.Callback {
+            override fun onItemClick(repository: Repository) {
+                startActivity(RepositoryActivity.newIntent(this@MainActivity, repository))
+            }
+        })
+
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
     }

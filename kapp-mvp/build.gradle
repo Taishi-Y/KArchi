@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion rootProject.ext.androidCompileSdkVersion
@@ -34,6 +36,7 @@ dependencies {
     compile dependencies.picasso
     compile dependencies.rxAndroid
     compile dependencies.circleImageView
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     testCompile dependencies.jUnit
     testCompile dependencies.mockito

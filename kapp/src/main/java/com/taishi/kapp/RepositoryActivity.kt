@@ -27,7 +27,7 @@ class RepositoryActivity : AppCompatActivity() {
 
         val repository = intent.getParcelableExtra<Repository>(EXTRA_REPOSITORY)
         bindRepositoryData(repository)
-        loadFullUser(repository.owner.url)
+        loadFullUser(repository.owner!!.url!!)
     }
 
     override fun onDestroy() {
@@ -45,7 +45,7 @@ class RepositoryActivity : AppCompatActivity() {
         text_fork.visibility = if (repository.isFork) View.VISIBLE else View.GONE
         //Preload image for user because we already have it before loading the full user
         Picasso.with(this)
-                .load(repository.owner.avatarUrl)
+                .load(repository.owner!!.avatarUrl)
                 .placeholder(R.drawable.placeholder)
                 .into(image_owner)
     }
