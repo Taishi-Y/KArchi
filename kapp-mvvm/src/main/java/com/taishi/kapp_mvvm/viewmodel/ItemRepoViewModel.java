@@ -25,27 +25,27 @@ public class ItemRepoViewModel extends BaseObservable implements ViewModel {
     }
 
     public String getName() {
-        return repository.name;
+        return repository.getName();
     }
 
     public String getDescription() {
-        return repository.description;
+        return repository.getDescription();
     }
 
     public String getStars() {
-        return context.getString(R.string.text_stars, repository.stars);
+        return context.getString(R.string.text_stars, repository.getStars());
     }
 
     public String getWatchers() {
-        return context.getString(R.string.text_watchers, repository.watchers);
+        return context.getString(R.string.text_watchers, repository.getWatchers());
     }
 
     public String getForks() {
-        return context.getString(R.string.text_forks, repository.forks);
+        return context.getString(R.string.text_forks, repository.getForks());
     }
 
     public void onItemClick(View view) {
-        context.startActivity(RepositoryActivity.newIntent(context, repository));
+        context.startActivity(RepositoryActivity.Companion.newIntent(context, repository));
     }
 
     // Allows recycling ItemRepoViewModels within the recyclerview adapter

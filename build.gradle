@@ -4,11 +4,12 @@ apply plugin: 'kotlin'
 
 buildscript {
     ext.kotlin_version = '1.1.2-4'
+    ext.plugin_version = "2.3.3"
     repositories {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath "com.android.tools.build:gradle:$plugin_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }

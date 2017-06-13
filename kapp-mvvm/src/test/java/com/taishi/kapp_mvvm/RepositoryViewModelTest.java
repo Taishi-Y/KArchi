@@ -44,58 +44,58 @@ public class RepositoryViewModelTest {
         // Default behaviour is to load a mock owner when the view model is instantiated
         repository = MockModelFabric.newRepository("Repository");
         owner = MockModelFabric.newUser("owner");
-        when(githubService.userFromUrl(repository.owner.url))
+        when(githubService.userFromUrl(repository.getOwner().getUrl()))
                 .thenReturn(Observable.just(owner));
         viewModel = new RepositoryViewModel(application, repository);
     }
 
     @Test
     public void shouldGetDescription() {
-        assertEquals(repository.description, viewModel.getDescription());
+        assertEquals(repository.getDescription(), viewModel.getDescription());
     }
 
     @Test
     public void shouldGetHomepage() {
-        assertEquals(repository.homepage, viewModel.getHomepage());
+        assertEquals(repository.getHomepage(), viewModel.getHomepage());
     }
 
     @Test
     public void shouldGetLanguage() {
-        assertEquals(application.getString(R.string.text_language, repository.language),
+        assertEquals(application.getString(R.string.text_language, repository.getLanguage()),
                 viewModel.getLanguage());
     }
 
     @Test
     public void shouldReturnHomepageVisibilityGone() {
-        repository.homepage = null;
+        repository.setHomepage(null);
         assertEquals(View.GONE, viewModel.getHomepageVisibility());
     }
 
     @Test
     public void shouldReturnLanguageVisibilityGone() {
-        repository.language = null;
+        repository.setLanguage(null);
         assertEquals(View.GONE, viewModel.getLanguageVisibility());
     }
 
     @Test
     public void shouldReturnForkVisibilityVisible() {
-        repository.fork = true;
+        repository.setIsFork(true);
         assertEquals(View.VISIBLE, viewModel.getForkVisibility());
     }
 
     @Test
     public void shouldReturnForkVisibilityGone() {
-        repository.fork = false;
+        repository.setIsFork(false);
         assertEquals(View.GONE, viewModel.getForkVisibility());
     }
 
     @Test
     public void shouldLoadFullOwnerOnInstantiation() {
-        assertEquals(owner.name, viewModel.ownerName.get());
-        assertEquals(owner.email, viewModel.ownerEmail.get());
-        assertEquals(owner.location, viewModel.ownerLocation.get());
-        assertEquals(View.VISIBLE, viewModel.ownerEmailVisibility.get());
-        assertEquals(View.VISIBLE, viewModel.ownerLocationVisibility.get());
-        assertEquals(View.VISIBLE, viewModel.ownerLayoutVisibility.get());
+        assertEquals(owner.getName(), viewModel.getOwnerName().get());
+        assertEquals(owner.getEmail(), viewModel.getOwnerEmail().get());
+        assertEquals(owner.getLocation(), viewModel.getOwnerLocation().get());
+        assertEquals(View.VISIBLE, viewModel.getOwnerEmailVisibility().get());
+        assertEquals(View.VISIBLE, viewModel.getOwnerLocationVisibility().get());
+        assertEquals(View.VISIBLE, viewModel.getOwnerLayoutVisibility().get());
     }
 }

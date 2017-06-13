@@ -28,19 +28,19 @@ class MainActivity : AppCompatActivity(), MainMvpView {
         super.onCreate(savedInstanceState)
         //Set up presenter
         presenter = MainPresenter()
-        presenter!!.attachView(this)
+        presenter?.attachView(this)
         setContentView(R.layout.activity_main)
         //Set up ToolBar
         setSupportActionBar(toolbar)
         //Set up RecyclerView
         setupRecyclerView(repos_recycler_view)
         // Set up search button
-        button_search.setOnClickListener { presenter!!.loadRepositories(edit_text_username!!.text.toString()) }
+        button_search.setOnClickListener { presenter?.loadRepositories(edit_text_username!!.text.toString()) }
         //Set up username EditText
-        edit_text_username!!.addTextChangedListener(mHideShowButtonTextWatcher)
-        edit_text_username!!.setOnEditorActionListener(TextView.OnEditorActionListener { v, actionId, event ->
+        edit_text_username.addTextChangedListener(mHideShowButtonTextWatcher)
+        edit_text_username.setOnEditorActionListener(TextView.OnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                presenter!!.loadRepositories(edit_text_username!!.text.toString())
+                presenter?.loadRepositories(edit_text_username!!.text.toString())
                 return@OnEditorActionListener true
             }
             false
