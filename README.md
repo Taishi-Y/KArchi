@@ -17,18 +17,19 @@ The sample app displays a list of GitHub public repositories for a given usernam
 ![Screenshots](images/archi-screenshots.png)
 
 ### Libraries used
-* AppCompat, CardView and RecyclerView
-* Data Binding (only MVVM)
-* RxJava & RxAndroid
-* Retrofit 2
-* Picasso
-* Mockito
-* Robolectric
+* Java & Kotlin
+  * AppCompat, CardView and RecyclerView
+  * Data Binding (only MVVM)
+  * RxJava & RxAndroid
+  * Retrofit 2
+  * Picasso
+  * Mockito
+  * Robolectric
 
-* [Kotlin Android Extensions](https://kotlinlang.org/docs/tutorials/android-plugin.html)
-
-* kapt...
-https://stackoverflow.com/questions/41213765/issue-with-databinding-using-kotlin-for-android
+* Kotlin
+  * [Kotlin Android Extensions](https://kotlinlang.org/docs/tutorials/android-plugin.html)
+  * [kapt](https://kotlinlang.org/docs/reference/kapt.html)
+  
 
 ## Standard Android
 The `/app` directoy contains the implementation that follows the traditional standard Android approach. This is a couple of layout files, two Activities and the model. The model is exactly the same for the three implementations and it contains: `Repository`, `User` and a retrofit service (`GithubService`).
