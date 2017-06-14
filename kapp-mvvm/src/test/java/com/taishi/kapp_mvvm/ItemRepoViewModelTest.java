@@ -12,9 +12,12 @@ import org.robolectric.RobolectricGradleTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 
-import jp.nagisa.kapp_mvvm.BuildConfig;
-import jp.nagisa.kapp_mvvm.R;
 
+import com.taishi.kapp_mvvm.model.Repository;
+import com.taishi.kapp_mvvm.viewmodel.ItemRepoViewModel;
+
+
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.mock;

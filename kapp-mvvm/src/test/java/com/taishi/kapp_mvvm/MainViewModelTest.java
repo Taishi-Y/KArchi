@@ -4,6 +4,10 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.TextView;
 
+import com.taishi.kapp_mvvm.model.GithubService;
+import com.taishi.kapp_mvvm.model.Repository;
+import com.taishi.kapp_mvvm.viewmodel.MainViewModel;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,14 +18,14 @@ import org.robolectric.annotation.Config;
 import java.util.Collections;
 import java.util.List;
 
-import jp.nagisa.kapp_mvvm.BuildConfig;
-import jp.nagisa.kapp_mvvm.R;
 import okhttp3.ResponseBody;
 import retrofit2.Response;
 import retrofit2.adapter.rxjava.HttpException;
 import rx.Observable;
 import rx.schedulers.Schedulers;
 
+
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.anyListOf;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;

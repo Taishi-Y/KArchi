@@ -47,13 +47,12 @@ class MainActivity : AppCompatActivity(), MainMvpView {
         })
     }
 
-    // MainMvpView interface methods implementation
-
     override fun onDestroy() {
         presenter!!.detachView()
         super.onDestroy()
     }
 
+    // MainMvpView interface methods implementation
     override fun showRepositories(repositories: List<Repository>) {
         val adapter = repos_recycler_view.adapter as RepositoryAdapter
         adapter.setRepositories(repositories)

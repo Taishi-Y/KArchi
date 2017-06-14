@@ -53,7 +53,7 @@ class RepositoryActivity : AppCompatActivity(), RepositoryMvpView {
 
         val repository = intent.getParcelableExtra<Repository>(EXTRA_REPOSITORY)
         bindRepositoryData(repository)
-        presenter!!.loadOwner(repository.owner!!.url)
+        presenter!!.loadOwner(repository.owner!!.url!!)
     }
 
     override fun onDestroy() {

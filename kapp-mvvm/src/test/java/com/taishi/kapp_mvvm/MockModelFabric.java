@@ -1,5 +1,8 @@
 package com.taishi.kapp_mvvm;
 
+import com.taishi.kapp_mvvm.model.Repository;
+import com.taishi.kapp_mvvm.model.User;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
