@@ -1,6 +1,7 @@
 # KArchi
-This repository is inspired by [Archi](https://github.com/ivacf/archi) by [ivacf](https://github.com/ivacf). This is
- showcases and compares different architectural patterns in Java and Kotlin. The exact same sample app is built six times using the following approaches:
+This repository is inspired by [Archi](https://github.com/ivacf/archi) by [ivacf](https://github.com/ivacf).
+
+This is showcases and compares different architectural patterns, all with Java and Kotlin versions. The exact same sample app is built 6 times using the following approaches:
 * Java
   * __Standard Android__: traditional approach with layouts, Activities/Fragments and Model.
   * __MVP__: Model View Presenter.
@@ -25,11 +26,10 @@ The sample app displays a list of GitHub public repositories for a given usernam
   * Picasso
   * Mockito
   * Robolectric
-
 * Kotlin
   * [Kotlin Android Extensions](https://kotlinlang.org/docs/tutorials/android-plugin.html)
   * [kapt](https://kotlinlang.org/docs/reference/kapt.html)
-  
+
 
 ## Standard Android
 The `/app` directoy contains the implementation that follows the traditional standard Android approach. This is a couple of layout files, two Activities and the model. The model is exactly the same for the three implementations and it contains: `Repository`, `User` and a retrofit service (`GithubService`).
