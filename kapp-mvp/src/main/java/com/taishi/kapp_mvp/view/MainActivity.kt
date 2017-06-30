@@ -19,8 +19,11 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity(), MainMvpView {
-    override val context: Context
-        get() = this //To change initializer of created properties use File | Settings | File Templates.
+
+    override fun getContext(): Context {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
 
     private var presenter: MainPresenter? = null
 
