@@ -32,7 +32,7 @@ class MainPresenter : Presenter<MainMvpView> {
 
         mainMvpView!!.showProgressIndicator()
         if (subscription != null) subscription!!.unsubscribe()
-        val application = ArchiApplication[mainMvpView!!.context]
+        val application = ArchiApplication[mainMvpView!!.getContext()]
         val githubService = application.githubService
         subscription = githubService!!.publicRepositories(username)
                 .observeOn(AndroidSchedulers.mainThread())

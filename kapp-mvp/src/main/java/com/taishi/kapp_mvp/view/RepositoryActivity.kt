@@ -61,8 +61,9 @@ class RepositoryActivity : AppCompatActivity(), RepositoryMvpView {
         presenter!!.detachView()
     }
 
-    override val context: Context
-        get() = this
+    override fun getContext(): Context {
+        return this
+    }
 
     override fun showOwner(owner: User) {
         ownerNameText!!.text = owner.name

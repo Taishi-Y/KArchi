@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), MainMvpView {
 
     override fun getContext(): Context {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return this
     }
 
 

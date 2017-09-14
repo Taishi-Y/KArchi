@@ -22,7 +22,7 @@ class RepositoryPresenter : Presenter<RepositoryMvpView> {
     }
 
     fun loadOwner(userUrl: String) {
-        val application = ArchiApplication[repositoryMvpView!!.context]
+        val application = ArchiApplication[repositoryMvpView!!.getContext()]
         val githubService = application.githubService
         subscription = githubService!!.userFromUrl(userUrl)
                 .observeOn(AndroidSchedulers.mainThread())
